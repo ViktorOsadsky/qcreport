@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QCReport</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <div class="overlay-container">
+    <img src="assets/yh5.png" alt="Yellow Haze" class="haze-overlay">
+  </div>
+  <header class="site-header">
+    <a href="#">
+       <img src="assets/QCReportLogo.png" alt="QCReport Logo" class="logo">
+    </a>
+    <nav class="nav-container">
+      <div class="navs">
+          <a href="#about" class="button-link">About</a>
+          <a href="#integrate" class="button-link">Integrate</a>
+          <a href="#evidence" class="button-link">Evidence</a>
+          <a href="#contact" class="button-link">Contact</a>
+      </div>
+    </nav>
+    <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+  </header>
+
+    <main class = "contents">
+        <div class="main-section">
+          <div class="content-container">
+            <div class="text-block">
+              <h2>Automatically Flag Unusable Radiographs</h2>
+              <p>Save annotation time. Improve AI reliability.</p>
+            </div>
+            <a class="cta-button" href="#contact">Try in Your System</a>
+          </div>
+        </div>
+          <div class="sect2" id="about">
+             <div class="solid-square">Radiology datasets often contain unusable or misleading images.
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                     fill="none" 
+                     viewBox="0 0 24 24" 
+                     stroke-width="1.5" 
+                     stroke="#eefd42"
+                     class="sect2icons">
+                  <path stroke-linecap="round" stroke-linejoin="round" 
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                </svg>
+             </div>
+             <div class="solid-square">Annotation time is wasted, AI models learn noise.
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke-width="1.5" 
+                        stroke="#eefd42" 
+                        class="sect2icons">
+                    <path stroke-linecap="round" stroke-linejoin="round" class="icon"
+                        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                </svg>
+             </div>
+          </div>
+            <div class="sect3">
+                <div class="vertical-line"></div>
+                <div class="sect3-box">
+                    <div class="sect3-heading">What is QCReport?</div>
+                    <div class="sect3-text">QCReport is a novel approach to radiology quality control. Specifically designed for filtering chest x-ray datasets, QCReport removes undiagnosable images that may affect AI training results.</div>
+                    <div class="sect3-text">Many CXR datasets (publicly available or privately sourced) have a problem. Some images that are completely undiagnosable due to quality decrease AI training accuracy. While it is true that challenging images help models tackle these situations when deployed, cases that have no possible information for diagnosis decrease prediction accuracy and cause model confusion.</div>
+                </div>
+                <div class="vertical-line"></div>
+            </div>
+            <div class="sect4">
+                <div class="sect4square">
+                    <div class = "sect4-heading">Why QCReport?</div>
+                    <div class = "sect4-text">Most proposed radiograph quality scoring systems follow a systematic approach, or simply predicting if an image has technical limitations by identifying artifacts, rotation, penetration, etc. QCReport is far more comprehensive. By training on the cases that radiologists reject, aspects such as severe pathologies or film quality would also be included in model predictions. Additionally, QCReport follows a novel scoring system.</div>
+                </div>
+            </div>
+            <div class="sect5">
+                <div class="sect5textbox">
+                    <div class="sect5heading">How it Works</div>
+                    <div class="sect5text">The QCReport scoring system allows for greater freedom to the user. Each case is scored on a scale of 0 to 9, with 0 signifying a completely undiagnosable image, and 9 signifying a good quality image. The user can set their own threshold quality limit to their dataset, and experiment until they reach their best results.</div>
+                </div>
+                <div class="sect5graphics">
+                    <div class="normalbox">
+                        <div class="normtext">Quality Score: 9</div>
+                        <img src="assets/normalcxricon.png" alt="Normal CXR Icon" class="normicon">
+                    </div>
+                    <div class="abbox">
+                        <div class="abtext">Quality Score: 1</div>
+                        <img src="assets/flaggedcxricon.png" alt="Flagged CXR Icon" class="flagicon">
+                    </div>
+                </div>
+            </div>
+            <div class="sect6" id="integrate">
+                <div class="container">
+                  <div class="tabs">
+                    <div class="tab active" onclick="showContent(0)">For Annotation Services</div>
+                    <div class="tab" onclick="showContent(1)">For Individual Developers</div>
+                    <div class="tab" onclick="showContent(2)">For Other Purposes</div>
+                  </div>
+
+                  <div class="content-box">
+                    <div class="content active" id="content0">
+                        <div class="info-wrapper">
+                          <div class="info background">
+                              <div class="infoin">Cut-Off scores influence the severity of quality scoring. For example, if a customer specifically requests only significantly high quality chest radiographs, a cut-off score of 7 would exclude every image with a lower score predicted by QCReport.</div>
+                          </div>
+                          <div class="info foreground">
+                            <div class="numinfo">1.</div>
+                            <div class="infotext">
+                              <div class="infohead">Set A Custom Cut-Off Score</div>
+                              <div class="infoin">Scores are continuous values. Generally, a cut-off score of 3 yields the best results.</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="info-wrapper">
+                          <div class="info background">
+                              <div class="infoin">By passing data to an external server, QCReport scores each image from 0 to 9.</div>
+                          </div>
+                          <div class="info foreground">
+                            <div class="numinfo">2.</div>
+                            <div class="infotext">
+                              <div class="infohead">Run QCReport on Customer CXR Dataset</div>
+                              <div class="infoin">QCReport is much faster and far more efficient than human radiologist quality graders.</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="info-wrapper">
+                          <div class="info background">
+                              <div class="infoin">After receiving a quality score for every image, exclude the lowest scores possible while still making a noticeable change. While scores above 3 to 5 are low quality, they are still diagnosable. These challenging images are good to have in a dataset, as they expose the model to real-world data.</div>
+                          </div>
+                          <div class="info foreground">
+                            <div class="numinfo">3.</div>
+                            <div class="infotext">
+                              <div class="infohead">Exclude or Flag Images Under Cut-Off Score</div>
+                              <div class="infoin">For high-quality datasets, the number of flagged images would normally be low. However, even for these, QCReport can provide improvement.</div>
+                            </div>
+                          </div>
+                        </div>
+
+                    </div>
+
+                    <div class="content" id="content1">
+                        <div class="info-wrapper">
+                          <div class="info background">
+                              <div class="infoin">Datasets processed have no fixed limit size. However, there is a fee based on the amount of images to assess.</div>
+                          </div>
+                          <div class="info foreground">
+                            <div class="numinfo">1.</div>
+                            <div class="infotext">
+                              <div class="infohead">Receive Dataset Quality Scores from QCReport</div>
+                              <div class="infoin">Scores are continuous values. Dataset scores will returned in one document containing the file name and associated score.</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="info-wrapper">
+                          <div class="info background">
+                              <div class="infoin">Some datasets may require unique cut-off scores for the best results. While time consuming, re-training on multiple cutoffs will provide best results for any dataset.</div>
+                          </div>
+                          <div class="info foreground">
+                            <div class="numinfo">2.</div>
+                            <div class="infotext">
+                              <div class="infohead">Test Multiple Cut-Off Points for Best Results</div>
+                              <div class="infoin">Ensure that convergence testing is performed to pinpoint the best possible cut-off.</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="info-wrapper">
+                          <div class="info background">
+                              <div class="infoin">While rare, some datasets do already exclude low-quality images. Therefore, while still useful on this sort of data, QCReport works best with raw radiological chest radiographs taken directly from a hospital archive.</div>
+                          </div>
+                          <div class="info foreground">
+                            <div class="numinfo">3.</div>
+                            <div class="infotext">
+                              <div class="infohead">Exclude Images Under Cut-Off Score</div>
+                              <div class="infoin">After identifying the most effective cut-off score, the final model trains with better results (if any poor quality is present).</div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="content" id="content2">
+                        <div class="info-wrapper">
+                          <div class="info background">
+                              <div class="infoin">While the current version of QCReport generates predictions based on what is best for AI training data, it also has use for other statistical research. For example, it can evaluate the quality of radiographs taken at specific hospitals or clinics for quality reports.</div>
+                          </div>
+                          <div class="info foreground">
+                            <div class="infotext">
+                              <div class="infohead">QCReport for Non-Annotation Purposes</div>
+                              <div class="infoin">QCReport could serve as a valuable tool for a variety of clinical trials, data collection, or other research projects.</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="info-wrapper">
+                          <div class="info background">
+                              <div class="infoin">Even though it is still early to consider hospital integration, QCReport is open to any interest for the future. Possible hospital integration could include direct reporting within modalities, to suggest if a retake is needed before the patient leaves the hospital.</div>
+                          </div>
+                          <div class="info foreground">
+                            <div class="infotext">
+                              <div class="infohead">QCReport in a Clinical/Hospital Setting</div>
+                              <div class="infoin">Currently, QCReport does not have any approvals or clinical validation. However, hospital integration is a primary future goal.</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="info-wrapper">
+                          <div class="info background">
+                              <div class="infoin">At its current state, QCReport is being focused on radiograph annotation companies, specifically for CXR. However, as development progresses, QCReport will hopefully be able to cover all anatomical sites. Reach out if you would like to be kept updated!</div>
+                          </div>
+                          <div class="info foreground">
+                            <div class="infotext">
+                              <div class="infohead">Other Uses of QCReport</div>
+                              <div class="infoin">Due to its flexibility, QCReport can be used in a variety of ways. If this may require modifications, please feel free to ask!</div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="sect7" id="evidence">
+                <div class="vertical-line2"></div>
+                <div class="sect3-box">
+                    <div class="sect3-heading">QCReport in Action</div>
+                    <div class="sect3-text">QCReport was tested on 3 datasets to demonstrate its capabilities. To show improvement, metrics of the task associated with the dataset were compared to a model trained on raw data and a model trained on QCReport curated data. Each study had a cut-off score of 3.</div>
+                </div>
+                <div class="vertical-line2"></div>
+            </div>
+            <div class="sect8">
+              <div class="cxr8" data-qc="off">
+                <div class="evihead">Chest X-Ray 8</div>
+                <div class="eviswitch">
+                  <div class="eviswitchtext">QCReport: Off</div>
+                  <div class="evibutton" id="qc-toggle">
+                    <div class="eviknob"></div>
+                  </div>
+                </div>
+                <button class="show-metrics-btn">Show Metrics</button>
+                <div class="evistext">
+                  <div class="evibox">
+                    <div class="eviflip">
+                      <div class="evifront">
+                        <div class="metrichead">Accuracy</div>
+                        <div class="metric">0.1111</div>
+                        <div class="uboxn"></div>
+                      </div>
+                      <div class="eviback">
+                        <div class="metrichead">Accuracy</div>
+                        <div class="metric">0.2222</div>
+                        <div class="uboxg"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="evibox">
+                    <div class="eviflip">
+                      <div class="evifront">
+                        <div class="metrichead">AUC</div>
+                        <div class="metric">0.1111</div>
+                        <div class="uboxn"></div>
+                      </div>
+                      <div class="eviback">
+                        <div class="metrichead">AUC</div>
+                        <div class="metric">0.2222</div>
+                        <div class="uboxg"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="evibox">
+                    <div class="eviflip">
+                      <div class="evifront">
+                        <div class="metrichead">Precision</div>
+                        <div class="metric">0.1111</div>
+                        <div class="uboxn"></div>
+                      </div>
+                      <div class="eviback">
+                        <div class="metrichead">Precision</div>
+                        <div class="metric">0.1000</div>
+                        <div class="uboxr"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="evibox">
+                    <div class="eviflip">
+                      <div class="evifront">
+                        <div class="metrichead">Recall</div>
+                        <div class="metric">0.1111</div>
+                        <div class="uboxn"></div>
+                      </div>
+                      <div class="eviback">
+                        <div class="metrichead">Recall</div>
+                        <div class="metric">0.2222</div>
+                        <div class="uboxg"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cxr82" data-qc="off">
+                <div class="evihead">CheXchoNet</div>
+                <div class="eviswitch">
+                  <div class="eviswitchtext2">QCReport: Off</div>
+                  <div class="evibutton2" id="qc-toggle2">
+                    <div class="eviknob2"></div>
+                  </div>
+                </div>
+                <button class="show-metrics-btn2">Show Metrics</button>
+                <div class="evistext2">
+                  <div class="evibox">
+                    <div class="eviflip2">
+                      <div class="evifront">
+                        <div class="metrichead">Accuracy</div>
+                        <div class="metric">0.1111</div>
+                        <div class="uboxn"></div>
+                      </div>
+                      <div class="eviback">
+                        <div class="metrichead">Accuracy</div>
+                        <div class="metric">0.2222</div>
+                        <div class="uboxg"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="evibox">
+                    <div class="eviflip2">
+                      <div class="evifront">
+                        <div class="metrichead">AUC</div>
+                        <div class="metric">0.1111</div>
+                        <div class="uboxn"></div>
+                      </div>
+                      <div class="eviback">
+                        <div class="metrichead">AUC</div>
+                        <div class="metric">0.2222</div>
+                        <div class="uboxg"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="evibox">
+                    <div class="eviflip2">
+                      <div class="evifront">
+                        <div class="metrichead">Precision</div>
+                        <div class="metric">0.1111</div>
+                        <div class="uboxn"></div>
+                      </div>
+                      <div class="eviback">
+                        <div class="metrichead">Precision</div>
+                        <div class="metric">0.1000</div>
+                        <div class="uboxr"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="evibox">
+                    <div class="eviflip2">
+                      <div class="evifront">
+                        <div class="metrichead">Recall</div>
+                        <div class="metric">0.1111</div>
+                        <div class="uboxn"></div>
+                      </div>
+                      <div class="eviback">
+                        <div class="metrichead">Recall</div>
+                        <div class="metric">0.2222</div>
+                        <div class="uboxg"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cxr83" data-qc="off">
+                <div class="evihead">NIRT</div>
+                <div class="eviswitch">
+                  <div class="eviswitchtext3">QCReport: Off</div>
+                  <div class="evibutton3" id="qc-toggle3">
+                    <div class="eviknob3"></div>
+                  </div>
+                </div>
+                <button class="show-metrics-btn3">Show Metrics</button>
+                <div class="evistext3">
+                  <div class="evibox">
+                    <div class="eviflip3">
+                      <div class="evifront">
+                        <div class="metrichead">Accuracy</div>
+                        <div class="metric">0.1111</div>
+                        <div class="uboxn"></div>
+                      </div>
+                      <div class="eviback">
+                        <div class="metrichead">Accuracy</div>
+                        <div class="metric">0.2222</div>
+                        <div class="uboxg"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="evibox">
+                    <div class="eviflip3">
+                      <div class="evifront">
+                        <div class="metrichead">AUC</div>
+                        <div class="metric">0.1111</div>
+                        <div class="uboxn"></div>
+                      </div>
+                      <div class="eviback">
+                        <div class="metrichead">AUC</div>
+                        <div class="metric">0.2222</div>
+                        <div class="uboxg"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="evibox">
+                    <div class="eviflip3">
+                      <div class="evifront">
+                        <div class="metrichead">Precision</div>
+                        <div class="metric">0.1111</div>
+                        <div class="uboxn"></div>
+                      </div>
+                      <div class="eviback">
+                        <div class="metrichead">Precision</div>
+                        <div class="metric">0.1000</div>
+                        <div class="uboxr"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="evibox">
+                    <div class="eviflip3">
+                      <div class="evifront">
+                        <div class="metrichead">Recall</div>
+                        <div class="metric">0.1111</div>
+                        <div class="uboxn"></div>
+                      </div>
+                      <div class="eviback">
+                        <div class="metrichead">Recall</div>
+                        <div class="metric">0.2222</div>
+                        <div class="uboxg"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sect9" id="contact">
+              <div class="sect9header">Get in Touch</div>
+              <div class="sect9info">
+                <div class="s9infotextbox">
+                  <div class="s9infohead">Reach out if you would like to:</div>
+                  <ul class="s9infotext">
+                    <li>Integrate QCReport into your workflow</li>
+                    <li>Curate a dataset with QCReport</li>
+                    <li>Collaborate on research</li>
+                    <li>Ask a question</li>
+                  </ul>
+                </div>
+                <div class="s9infocontact">
+                    <div class="email">
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                             fill="none" 
+                             viewBox="0 0 24 24" 
+                             stroke-width="1.5" 
+                             stroke="#ffffff"
+                             class="mailsvg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                        </svg>
+                        <a href="mailto:viktor.osadsky@gmail.com" class="emailtext">viktor.osadsky@gmail.com</a>
+                    </div>
+                    <div class="email">
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                             fill="none" 
+                             viewBox="0 0 46 46" 
+                             stroke="#ffffff"
+                             class="mailsvg">
+                             <path d="M20.9716667,33.5527338 L25.001,33.5527338 L25.001,27.1328007 C25.001,25.439485 25.3213333,23.7988354 27.4206667,23.7988354 C29.491,23.7988354 29.517,25.7351486 29.517,27.2404662 L29.517,33.5527338 L33.5506667,33.5527338 L33.5506667,26.4341413 C33.5506667,22.9381777 32.796,20.2505391 28.711,20.2505391 C26.7483333,20.2505391 25.432,21.3265278 24.8943333,22.3471839 L24.839,22.3471839 L24.839,20.5725357 L20.9716667,20.5725357 L20.9716667,33.5527338 Z M16.423,14.1202696 C15.1273333,14.1202696 14.0823333,15.1682587 14.0823333,16.4595785 C14.0823333,17.7508984 15.1273333,18.7992208 16.423,18.7992208 C17.7133333,18.7992208 18.761,17.7508984 18.761,16.4595785 C18.761,15.1682587 17.7133333,14.1202696 16.423,14.1202696 L16.423,14.1202696 Z M14.4026667,33.5527338 L18.4406667,33.5527338 L18.4406667,20.5725357 L14.4026667,20.5725357 L14.4026667,33.5527338 Z M9.76633333,40 C8.79033333,40 8,39.2090082 8,38.2336851 L8,9.76631493 C8,8.79065843 8.79033333,8 9.76633333,8 L38.234,8 C39.2093333,8 40,8.79065843 40,9.76631493 L40,38.2336851 C40,39.2090082 39.2093333,40 38.234,40 L9.76633333,40 Z" id="Shape" fill="#FFFFFF"></path>
+                        </svg>
+                        <a href="https://www.linkedin.com/in/viktor-osadsky-537644288/" class="emailtext" target="_blank" rel="noopener noreferrer">Personal LinkedIn</a>
+                    </div>
+                </div>
+              </div>
+              <div class="importantnotices">
+                <div class="s9infohead">Important Notices:</div>
+                <div class="intext">* QCReport is currently optimized for frontal chest X-rays (PA/AP views) only. Support for lateral views and other anatomical regions is currently in development.</div>
+                <div class="intext">* If your dataset has already been manually filtered or is consistently high in quality, QCReport may not yield significant further improvements.</div>
+              </div>
+            </div>
+    </main>
+
+
+    <footer>
+      <div class="footer-logo">
+        <a href="#">
+            <img src="assets/QCReportLogo.png" alt="QCReport Logo">
+        </a>
+      </div>
+
+      <div class="footer-links">
+        <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms of Use</a>
+        <a href="mailto:viktor.osadsky@gmail.com">viktor.osadsky@gmail.com</a>
+        <a href="https://www.linkedin.com/in/viktor-osadsky-537644288/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2025 QCReport. All rights reserved.
+      </div>
+    </footer>
+
+     <script src="js/script.js"></script>
+</body>
+</html>
