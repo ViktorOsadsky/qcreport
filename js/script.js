@@ -131,15 +131,6 @@ document.getElementById('qc-toggle2').addEventListener('click', function () {
   text.textContent = `QCReport: ${isOn ? 'Off' : 'On'}`;
 });
 
-document.getElementById('qc-toggle3').addEventListener('click', function () {
-  const cxr = document.querySelector('.cxr83');
-  const text = document.querySelector('.eviswitchtext3');
-  const isOn = cxr.getAttribute('data-qc3') === 'on';
-
-  cxr.setAttribute('data-qc3', isOn ? 'off' : 'on');
-  text.textContent = `QCReport: ${isOn ? 'Off' : 'On'}`;
-});
-
 const hamburger = document.querySelector('.hamburger');
 const navs = document.querySelector('.navs');
 const navLinks = document.querySelectorAll('.button-link');
