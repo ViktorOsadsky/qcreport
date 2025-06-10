@@ -427,6 +427,14 @@ main {
 .sect6 {
     padding-top: 25vh;
 }
+.integration {
+  color: #eefd42;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3vw;
+  font-weight: 800;
+  text-align: center;
+  padding: 3vh 2vw;
+}
 .container {
     width: 60vw;
     margin: auto;
@@ -785,7 +793,7 @@ main {
   margin-bottom: 5vh;
   width: 70%;
   justify-self: center;
-  padding-top: 20vh;
+  padding-top: 10vh;
 }
 .sect9info {
   display: flex;
