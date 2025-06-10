@@ -1038,6 +1038,9 @@ footer {
     .abtext {
         padding: 0;
     }
+    .integration {
+      font-size: 7vw;
+    }
     .flagicon {
         width: 100%;
     }
