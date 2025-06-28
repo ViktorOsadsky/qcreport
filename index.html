@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCReport</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(circle at center, #000000 0%, #0a0a0a 100%);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 80px 20px 80px;
+      gap: 40px;
+    }
+
+    .header-text {
+      max-width: 500px;
+      padding: 20px;
+    }
+
+    .header-text h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin: 0;
+      background: linear-gradient(to right, #0ff, #09f, #90f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-text p {
+      font-size: 1rem;
+      margin-top: 15px;
+      color: #ccc;
+    }
+
+    .graphic {
+      width: 280px;
+      height: 280px;
+      border-radius: 25px;
+      background-color: #2c2c2c;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+      animation: float 3s ease-in-out infinite;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    }
+
+    .bar {
+      width: 160px;
+      height: 20px;
+      border-radius: 5px;
+      margin: 6px 0;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .bar:hover {
+      transform: scale(1.05);
+    }
+
+    .red { background-color: #ff4b4b; }
+    .green { background-color: #4bff90; }
+
+    .score-text {
+      color: white;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20vh auto 60px;
+      padding: 60px 20px;
+      text-align: center;
+      background: radial-gradient(circle at top left, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+      border-radius: 25px;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.05), inset 0 0 10px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(6px);
+    }
+
+    .container h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, #0ff, #09f, #90f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    form {
+      margin-top: 30px;
+    }
+
+    input[type="email"] {
+      padding: 12px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      width: 70%;
+      max-width: 400px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      display: block;
+      margin: 0 auto;
+      padding: 12px 24px;
+      font-size: 1rem;
+      background-color: #fff;
+      color: #000;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+    }
+
+    button:hover {
+      background-color: #ddd;
+    }
+
+    .info-section {
+      max-width: 800px;
+      margin: 40px auto 100px;
+      padding: 40px;
+      background: linear-gradient(to bottom right, rgba(0, 0, 50, 0.3), rgba(50, 0, 50, 0.2));
+      border-radius: 25px;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.03);
+      text-align: center;
+      margin-top: 10vh;
+    }
+
+    .info-section h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      background: linear-gradient(to right, #0ff, #09f, #90f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .info-section p {
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .graphic {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="header">
+    <div class="header-text">
+      <h1>Automated<br>Dataset<br>Quality Control</h1>
+      <p>Automatically score image quality based on dataset context.<br>
+      Save time on annotation, skip unusable images, and improve data pipelines.</p>
+    </div>
+    <div class="graphic">
+      <div class="score-text">QC REPORT</div>
+      <div class="bar red"></div>
+      <div class="bar green"></div>
+      <div class="bar red"></div>
+      <div class="bar red"></div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <h3>What is QCReport?</h3>
+    <p>QCReport is a tool that automatically scores the quality of an image in relation to the context of the dataset. It can be used for dataset curation, institution quality evaluation, data leakage identification, and much more.</p>
+  </section>
+
+  <div class="container">
+    <h2>Interested in Testing or Working with QCReport?</h2>
+    <p>Currently offering free runs on small batches of your dataset (no setup needed).</p>
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>
